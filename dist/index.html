@@ -327,5 +327,20 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+      
+          
+            let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
+            console.log(url_query);
+            if(url_query[0] == 'admin'){
+              if(url_query[1] == 'cadastro'){
+                $("#document-root").load("/view/administrador/cadastro.html");
+              }
+              else{
+                $("#document-root").load("/view/administrador/login.html");
+              }
+            }      
+            
+          </script>
     </body>
 </html>
