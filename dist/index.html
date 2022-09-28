@@ -316,6 +316,9 @@
                 </div>
             </div>
         </div>
+        <div id="document-root">
+
+        </div>
 
 
         <!-- Bootstrap core JS-->
@@ -332,12 +335,12 @@
           
             let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
             console.log(url_query);
-            if(url_query[0] == 'admin'){
+            if(url_query[0] == 'user'){
               if(url_query[1] == 'cadastro'){
-                $("#document-root").load("/view/administrador/cadastro.html");
+                $("#document-root").load("/paginas/login.html");
               }
               else{
-                $("#document-root").load("/view/administrador/login.html");
+                $("#document-root").load("/paginas/login.html");
               }
             }      
             
