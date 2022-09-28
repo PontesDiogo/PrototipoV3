@@ -491,8 +491,9 @@ progress {
 }
 
 .lead {
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .display-1 {
@@ -603,8 +604,8 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: 360px;
-  width: 400px;
+  height: 250px;
+  width: 250px;
 }
 
 .img-thumbnail {
@@ -1384,7 +1385,7 @@ progress {
 
   .col-lg-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 34%;
   }
 
   .col-lg-5 {
@@ -11300,13 +11301,13 @@ html {
   padding: 6rem 0;
 }
 .page-section .page-section-heading {
-  font-size: 2.25rem;
-  line-height: 2rem;
+  font-size: 20px;
+  line-height: 20px;
 }
 @media (min-width: 992px) {
   .page-section .page-section-heading {
-    font-size: 3rem;
-    line-height: 2.5rem;
+    font-size: 20px;
+    line-height: 20px;
   }
 }
 
@@ -11439,27 +11440,27 @@ html {
   padding-bottom: 6rem;
 }
 .masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
+  font-size: 20px;
+  line-height: 20px;
 }
 .masthead .masthead-subheading {
-  font-size: 1.25rem;
+  font-size: 18px;
 }
 .masthead .masthead-avatar {
-  width: 15rem;
+  width: 20px;
 }
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem;
+    padding-top: calc(10px + 104px);
+    padding-bottom: 20px;
   }
   .masthead .masthead-heading {
     font-size: 4rem;
-    line-height: 3.5rem;
+    line-height: 15px;
   }
   .masthead .masthead-subheading {
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 }
 .portfolio .portfolio-item {
