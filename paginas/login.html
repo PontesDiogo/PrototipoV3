@@ -34,13 +34,13 @@
                             <li class="nav-item">
                                 <a href="cadastro.html" class="nav-link text-white">Quero me cadastrar</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
- 
+
         <main class="flex-fill">
             <div class="container">
                 <div class="row justify-content-center">
@@ -54,7 +54,7 @@
 
                         <div class="form-floating mb-3">
                             <input type="password" id="inputSenha" class="form-control" placeholder=" ">
-                            <label for="input]">Senha</label>
+                            <label for="inputSenha">Senha</label>
                         </div>
 
                         <div class="form-check mb-3">
@@ -95,20 +95,20 @@
                         E-mail: <a href="mailto:email@dominio.com"
                             class="text-decoration-none text-dark">email@dominio.com</a><br>
                         Telefone: <a href="phone:28999990000" class="text-decoration-none text-dark">(28) 99999-0000</a>
-                 
+
                     </div>
                 </div>
             </div>
         </footer>
     </div>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>    
+    <script>
 
         $("#btnEntrar").click(()=>{
             login($("#inputEmail").val(), $("#inputPassword").val());
-            
+
         });
-    
+
         function login(email, senha){
             var objectJson = JSON.stringify({
                 "acao": "logar",
@@ -124,10 +124,10 @@
                 else{
                     alert("Email ou senha inválidos")
                 }
-                    
+
             });
         }
-    
+
     </script>
 </body>
 

@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="../esilo.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -30,17 +31,45 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Empresas Associadas</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Sobre</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contato</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./../paginas/login.html">Entrar</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><button class=" nav-link py-3 px-0 px-lg-5 rounded" onclick="openForm()">Entrar</button></li>
+
+                        <div class="form-popup" id="myForm">
+                            <form action="/action_page.php" class="form-container">
+                              <h1>Login</h1>
+
+                              <label for="email"><b>Email</b></label>
+                              <input type="text" placeholder="Enter Email" name="email" required>
+
+                              <label for="psw"><b>Password</b></label>
+                              <input type="password" placeholder="Enter Password" name="psw" required>
+
+                              <button type="submit" class="btn">Login</button>
+                              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </form>
+                          </div>
+          <script>
+            function openForm() {
+              document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+              document.getElementById("myForm").style.display = "none";
+            }
+            </script>
+
+
                     </ul>
                 </div>
             </div>
         </nav>
+
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
-            
+
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+
 
                 <!-- Masthead Heading-->
                 <a class="masthead-heading text-uppercase mb-0 text-light" href="/paginas/login.html">Entrar</a>
@@ -50,6 +79,7 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Students on Working - Portfolio de Curriculos</p>
             </div>
@@ -109,7 +139,7 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 m-auto"><p class="lead">O Students on Working é um portfolio de currículos online que visa facilitar a criação de conexões entre alunos da escola Etec Tietê  e as empresas onde buscam ter suas primmeiras experiências. Nele você pode entrar em seu perfil e anexar suas informações e ainda buscar por possives vagas. </p></div>
-                    
+
                 </div>
         </section>
         <!-- Contact Section-->
@@ -303,8 +333,8 @@
                                     </div>
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-                                   
-                                    
+
+
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Fechar
@@ -331,8 +361,8 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script>
-      
-          
+
+
             let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
             console.log(url_query);
             if(url_query[0] == 'user'){
@@ -342,8 +372,8 @@
               else{
                 $("#document-root").load("/paginas/login.html");
               }
-            }      
-            
+            }
+
           </script>
     </body>
 </html>
