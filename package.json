@@ -38,7 +38,7 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-freelancer.git"
     },
     "dependencies": {
-        "bootstrap": "^5.2.1",
+        "bootstrap": "^5.2.2",
         "startbootstrap-freelancer": "^7.0.6"
     },
     "devDependencies": {
