@@ -73,3 +73,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 1;
 }
 
+.FormEmailPopup{
+    max-width: 250px;
+  padding: 10px;
+  background-color: white;
+}
+.FormSenhaPopup{
+    max-width: 250px;
+  padding: 10px;
+  background-color: white;
+}
+
+

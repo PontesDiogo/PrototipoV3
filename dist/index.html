@@ -8,6 +8,9 @@
         <title>Students on Working</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -31,17 +34,17 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Empresas Associadas</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Sobre</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contato</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><button class=" nav-link py-3 px-0 px-lg-5 rounded" onclick="openForm()">Entrar</button></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="openForm()">Entrar</a></li>
 
-                        <div class="form-popup" id="myForm">
-                            <form action="/action_page.php" class="form-container">
+                        <div class="form-popup" id="FormPopup">
+                            <form action="/dist/inicio.html" class="form-container">
                               <h1>Login</h1>
 
                               <label for="email"><b>Email</b></label>
-                              <input type="text" placeholder="Enter Email" name="email" required>
+                              <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" required>
 
                               <label for="psw"><b>Password</b></label>
-                              <input type="password" placeholder="Enter Password" name="psw" required>
+                              <input type="password" placeholder="Enter Password" name="psw" class="FormSenhaPopup" required>
 
                               <button type="submit" class="btn">Login</button>
                               <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -49,11 +52,11 @@
                           </div>
           <script>
             function openForm() {
-              document.getElementById("myForm").style.display = "block";
+              document.getElementById("FormPopup").style.display = "block";
             }
 
             function closeForm() {
-              document.getElementById("myForm").style.display = "none";
+              document.getElementById("FormPopup").style.display = "none";
             }
             </script>
 
@@ -62,6 +65,7 @@
                 </div>
             </div>
         </nav>
+
 
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
