@@ -45,7 +45,7 @@ CREATE IF NOT EXISTS TABLE Curriculo (
     telefone INT,
     email VARCHAR (100),
     escolaridade VARCHAR (100),
-    Cursos VARCHAR (100),
+    cursos VARCHAR (100),
     experienciaProfissional VARCHAR (200),
     infoAdicionais VARCHAR (200)
 )engine=InnoDb;

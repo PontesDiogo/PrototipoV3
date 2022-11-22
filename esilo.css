@@ -34,7 +34,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
 .form-login input[type=text], .form-container input[type=password] {
-  width: 100%;
+  width: 2500px;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
@@ -64,8 +64,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: red;
 }
 .form-container {
-    max-width: 300px;
-    padding: 10px;
+    max-width: 3000px;
+    padding: 100px;
     background-color: white;
   }
 /* Add some hover effects to buttons */
