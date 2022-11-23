@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,14 +45,14 @@
                             onclick="openForm()">Entrar</a></li>
 
                     <div class="form-popup" id="FormPopup">
-                        <form action="/dist/inicio.html" class="form-container">
+                        <form action="../paginas/painel.php" class="form-container">
                             <h1>Login</h1>
 
                             <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" required>
+                            <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" class="FormSenhaPopup" required>
+                            <label for="password"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
 
 
                             <a href="../paginas/cadastro.html">Não tenho uma conta</a>

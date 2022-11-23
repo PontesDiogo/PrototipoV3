@@ -34,7 +34,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
 .form-login input[type=text], .form-container input[type=password] {
-  width: 2500px;
+  width: 250px;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
@@ -43,7 +43,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* When the inputs get focus, do something */
 .form-login input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
+  background-color: rgb(184, 183, 181);
   outline: none;
 }
 
@@ -64,7 +64,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: red;
 }
 .form-container {
-    max-width: 3000px;
+    max-width: 300px;
     padding: 100px;
     background-color: white;
   }
@@ -81,14 +81,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background: #f1f1f1;
 }
 .FormSenhaPopup{
-    max-width: 250px;
-  padding: 10px;
-  background-color: white;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
 }
-.FormLogin{
-    max-width: 250px;
-    padding: 10px;
-    background-color: white;
-}
-
 

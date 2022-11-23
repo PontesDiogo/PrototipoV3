@@ -1,6 +1,6 @@
 /* prototipo_tcc */
 DROP TABLE IF EXISTS Empresa;
-CREATE OF NOT EXISTS TABLE Empresa (
+CREATE TABLE IF NOT EXISTS  Empresa (
     id INT PRIMARY KEY,
     cnpj INT,
     nome VARCHAR (100),
@@ -10,7 +10,7 @@ CREATE OF NOT EXISTS TABLE Empresa (
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Aluno;
-CREATE IF NOT EXISTS TABLE Aluno (
+CREATE TABLE IF NOT EXISTS  Aluno (
     email VARCHAR (100) PRIMARY KEY,
     nome VARCHAR (100),
     telefone INT,
@@ -20,7 +20,7 @@ CREATE IF NOT EXISTS TABLE Aluno (
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Vagas;
-CREATE IF NOT EXISTSTABLE Vagas (
+CREATE TABLE IF NOT EXISTS Vagas (
     id INT PRIMARY KEY,
     fk_Empresa_id INT,
     vagaTitulo VARCHAR (50),
@@ -30,14 +30,14 @@ CREATE IF NOT EXISTSTABLE Vagas (
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Candidata;
-CREATE IF NOT EXISTS TABLE Candidata (
+CREATE TABLE IF NOT EXISTS  Candidata (
     fk_Aluno_email VARCHAR (100),
     fk_Vagas_id INT,
     status TEXT
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Curriculo;
-CREATE IF NOT EXISTS TABLE Curriculo (
+CREATE TABLE IF NOT EXISTS  Curriculo (
     id INT PRIMARY KEY,
     fk_Aluno_email VARCHAR (100),
     nome VARCHAR (100),
@@ -51,7 +51,7 @@ CREATE IF NOT EXISTS TABLE Curriculo (
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Formacao;
-CREATE IF NOT EXISTS TABLE Formacao (
+CREATE TABLE IF NOT EXISTS  Formacao (
     id INT PRIMARY KEY,
     fk_Curriculo_id INT,
     tipo VARCHAR (100),
@@ -59,14 +59,14 @@ CREATE IF NOT EXISTS TABLE Formacao (
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Chat;
-CREATE IF NOT EXISTS TABLE Chat (
+CREATE TABLE IF NOT EXISTS  Chat (
     id INT PRIMARY KEY,
     fk_Aluno_email VARCHAR (100),
     fk_Vagas_id INT
 )engine=InnoDb;
 
 DROP TABLE IF EXISTS Mensagem;
-CREATE IF NOT EXISTS TABLE Mensagem (
+CREATE TABLE IF NOT EXISTS  Mensagem (
     fk_Chat_id INT,
     data DATE,
     texto VARCHAR (300),
