@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Font Awesome icons (free version)-->
+    <link rel="icon" type="image/png" sizes="16x16" href="../dist/assets/favicon.ico">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../dist/css/styles.css">
+    <link rel="stylesheet" href="../estilosTelas.css">
+    <title>Students on Working :: Tipo de cadastro</title>
+</head>
+
+<body>
+    <div class="d-flex flex-column wrapper">
+        <nav class="navbar navbar-expand-lg navbar-warning bg-light border-bottom shadow-sm mb-4">
+            <div class="container">
+                <a class="navbar-brand text-black" href="../dist/index.html">
+                    <b>Students on Working</b>
+                </a>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="../dist/index.html">
+                                Principal
+                            </a>
+                        </li>
+                    </ul>
+                    <div class=" align-self-end">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a href="/login.html" class="nav-link text-black">Entrar</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-fill">
+            <div class="container">
+                <h1>Selecione o tipo de conta</h1>
+
+                <div class="d-flex justify-content-between flex-wrap border rounded-top pt-4 px-3">
+
+                    <div class="mb-4 mx-2 flex-even">
+                        <input type="radio" class="btn-check" name="contatipo" autocomplete="off" id="pag1">
+                        <label class="btn btn-outline-warning p-4 h-100 w-100" for="pag1">
+                            <h3>
+                                <b class="text-dark">Conta estudantil</b>
+                            </h3>
+                            <hr/>
+
+
+                            <form onclick="openForm()">
+                                <h4>Conta destinada a alunos</h4>
+                                <p>Por favor clique aqui para registrar suas informações</p>
+                                <br>
+                            </form>
+
+
+                        </label>
+                        <div class="form-popup" id="FormPopup">
+                            <form action="../paginas/painel.php" class="form-container">
+                                <h1>Login</h1>
+
+                                <label for="email"><b>Email</b></label>
+                                <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
+
+                                <label for="password"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
+
+
+                                <a href="../paginas/cadastroescolha.html">Não tenho uma conta</a>
+                                <button type="submit" class="btn">Login</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </form>
+                        </div>
+                        <script>
+                            function openForm() {
+                                document.getElementById("FormPopup").style.display = "block";
+                            }
+
+                            function closeForm() {
+                                document.getElementById("FormPopup").style.display = "none";
+                            }
+                        </script>
+
+                    </div>
+
+                    <div class="mb-4 mx-2 flex-even">
+                        <input type="radio" class="btn-check" name="contatipo" autocomplete="off" id="pag2">
+                        <label class="btn btn-outline-warning p-4 h-100 w-100" for="pag2">
+                            <h3>
+                                <b class="text-dark">Conta empresarial</b>
+                            </h3>
+                            <hr>
+                            <form action="">
+                                <h4>Conta destinada a empresas</h4>
+                                <p>Por favor clique aqui para registrar suas informações</p>
+                                <br>
+
+                            </form>
+
+                        </label>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </main>
+
+    </div>
+      <footer class="footer text-center ">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0 ">
+                        <h4 class="text-uppercase mb-4">Localização</h4>
+                        <p class="lead mb-0">
+                            R. Manira Jacob Biscaro, 45
+                            <br />
+                            Jd. Baccili, Tietê - SP
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0 justify-content-between">
+                        <h4 class="text-uppercase mb-4">Pela web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                                class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                                class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                                class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">Detalhes sobre o template</h4>
+                        <p class="lead mb-0">
+                            Freelance é de uso gratuito, MIT licenseado pelo tema Bootstrap criado em
+                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
