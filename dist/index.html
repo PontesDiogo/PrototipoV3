@@ -87,7 +87,33 @@
 
 
             <!-- Masthead Heading-->
-            <a class="masthead-heading text-uppercase mb-0 text-light" href="/paginas/login.html">Entrar</a>
+            <a class="masthead-heading text-uppercase mb-0 text-light" onclick="openForm()">Entrar</a>
+            <div class="form-popup" id="FormPopup">
+                <form action="../paginas/painel.php" class="form-container">
+                    <h1>Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
+
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
+
+
+                    <a class="naotenhoconta" href="../paginas/cadastro.html">Não tenho uma conta</a>
+                    <br>
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+            <script>
+                function openForm() {
+                    document.getElementById("FormPopup").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("FormPopup").style.display = "none";
+                }
+            </script>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
