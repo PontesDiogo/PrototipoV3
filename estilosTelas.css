@@ -16,12 +16,33 @@
 .form-popup {
   display: none;
   position: fixed;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-  border-radius: 5%;
+  border: 3px solid #000000;
+  z-index: 9;  
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  left: 50px;
+  right: 50px;
+  top: 250px;
+  bottom: 300px;
+  height: 405px;
 
 }
+
+
+.form-container {
+  max-width: 100%;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
 
 /* Add styles to the form container */
 .form-login {
@@ -41,9 +62,6 @@
 
 }
 
-.form-container{
-    border-radius: 2%;
-    }
 
 /* When the inputs get focus, do something */
 .form-login input[type=text]:focus, .form-container input[type=password]:focus {
@@ -67,10 +85,6 @@
 .form-login, .cancel {
   background-color: red;
 }
-.form-container {
-    max-width: 300px;
-    background-color: white;
-  }
 
   /*Add style to link*/
 .fotm-login, a {

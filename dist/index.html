@@ -8,9 +8,7 @@
     <meta name="author" content="" />
     <title>Students on Working</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />   
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -19,7 +17,8 @@
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="../esilo.css" rel="stylesheet" />
+    <link href="../esiloformpopup.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../estiloUniversal.css">
 </head>
 
 <body id="page-top">
@@ -45,31 +44,31 @@
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             onclick="openForm()">Entrar</a></li>
 
-                    <div class="form-popup" id="FormPopup">
-                        <form action="../paginas/painel.php" class="form-container">
-                            <h1>Login</h1>
-
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
-
-                            <label for="password"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
-
-
-                            <a href="../paginas/cadastroescolha.html">Não tenho uma conta</a>
-                            <button type="submit" class="btn">Login</button>
-                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                        </form>
-                    </div>
-                    <script>
-                        function openForm() {
-                            document.getElementById("FormPopup").style.display = "block";
-                        }
-
-                        function closeForm() {
-                            document.getElementById("FormPopup").style.display = "none";
-                        }
-                    </script>
+                            <div class="form-popup" id="FormPopup">
+                                <form action="../paginas/painel.php" class="form-container">
+                                    <h1>Login</h1>
+        
+                                    <label for="email"><b>Email</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
+        
+                                    <label for="password"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
+        
+        
+                                    <a href="../paginas/cadastroescolha.html">Não tenho uma conta</a>
+                                    <button type="submit" class="btnLog">Login</button>
+                                    <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+                                </form>
+                            </div>
+                            <script>
+                                function openForm() {
+                                    document.getElementById("FormPopup").style.display = "block";
+                                }
+        
+                                function closeForm() {
+                                    document.getElementById("FormPopup").style.display = "none";
+                                }
+                            </script>
 
 
                 </ul>
@@ -89,31 +88,7 @@
             <!-- Masthead Heading-->
             <a class="masthead-heading text-uppercase mb-0 text-light" onclick="openForm()">Entrar</a>
             <div class="form-popup" id="FormPopup">
-                <form action="../paginas/painel.php" class="form-container">
-                    <h1>Login</h1>
-
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
-
-                    <label for="password"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
-
-
-                    <a class="naotenhoconta" href="../paginas/cadastroescolha.html">Não tenho uma conta</a>
-                    <br>
-                    <button type="submit" class="btn">Login</button>
-                    <button type="button" class="cancel" onclick="closeForm()">Close</button>
-                </form>
-            </div>
-            <script>
-                function openForm() {
-                    document.getElementById("FormPopup").style.display = "block";
-                }
-
-                function closeForm() {
-                    document.getElementById("FormPopup").style.display = "none";
-                }
-            </script>
+               
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -229,7 +204,7 @@
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email"
+                                        <input class="form-control" id="emailexp" type="email"
                                             placeholder="name@example.com" data-sb-validations="required,email" />
                                         <label for="email">Endereço de Email</label>
                                         <div class="invalid-feedback" data-sb-feedback="email:required">Este campo é
@@ -369,7 +344,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-lg-8">
                                             <!-- Portfolio Modal - Title-->
-                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Samae
+                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Empresa fictícia
                                             </h2>
                                             <!-- Icon Divider-->
                                             <div class="divider-custom">
@@ -381,8 +356,7 @@
                                             <img class="img-fluid rounded mb-5"
                                                 src="assets/img/portfolio/logo_samae_exp.png" alt="..." />
                                             <!-- Portfolio Modal - Text-->
-                                            <p class="mb-4">O serviço de água em Tietê foi inaugurado no dia 12 de
-                                                janeiro de 1947 às 16:00h numa tarde de domingo.</p>
+                                            <p class="mb-4">Texto de resumo sobre a empresa.</p>
                                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                                 <i class="fas fa-xmark fa-fw"></i>
                                                 Fechar
@@ -406,8 +380,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-lg-8">
                                             <!-- Portfolio Modal - Title-->
-                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Empresa
-                                                exemplo</h2>
+                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Empresa fictícia</h2>
                                             <!-- Icon Divider-->
                                             <div class="divider-custom">
                                                 <div class="divider-custom-line"></div>
