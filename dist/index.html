@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>Students on Working</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />   
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -34,37 +34,39 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" id="teste_menu">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#portfolio">Empresas Associadas</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#about">Sobre</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#contact">Contato</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            onclick="openForm()">Entrar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" id="btn_entrar"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            onclick="openForm()">Entrar</a>
+                    </li>
 
                             <div class="form-popup" id="FormPopup">
-                                <form action="../paglogado/inicio.html" class="form-container">
+                                <div class="form-container">
+                                    <!-- action="../paglogado/inicio.html" -->
                                     <h1>Login</h1>
-        
+
                                     <label for="email"><b>Email</b></label>
                                     <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
-        
+
                                     <label for="password"><b>Password</b></label>
                                     <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
-        
-        
+
+
                                     <a href="../paginas/cadastroescolha.html">Não tenho uma conta</a>
-                                    <button type="submit" class="btnLog">Login</button>
+                                    <button class="btnLog" id="btnLogin">Login</button>
                                     <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
-                                </form>
+                                </div>
                             </div>
                             <script>
                                 function openForm() {
                                     document.getElementById("FormPopup").style.display = "block";
                                 }
-        
+
                                 function closeForm() {
                                     document.getElementById("FormPopup").style.display = "none";
                                 }
@@ -88,7 +90,7 @@
             <!-- Masthead Heading-->
             <a class="masthead-heading text-uppercase mb-0 text-light" onclick="openForm()">Entrar</a>
             <div class="form-popup" id="FormPopup">
-               
+
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -413,7 +415,36 @@
                 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
                 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
                 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+                <script src="../scripts/jquery-3.6.1.min.js"></script>
                 <script>
+
+
+                    btnLogin = document.querySelector("#btnLogin")
+
+                    btnLogin.addEventListener("click", () => {
+                        email = document.querySelector("#FormEmailPopup").value
+                        senha = document.querySelector("#FormSenhaPopup").value
+                        login(email, senha)
+                    })
+
+                    const login = (email, senha) => {
+
+                        let json_envio = {
+                            "funcao": "logar",
+	                        "email": email,
+	                        "senha": senha
+                        }
+
+                        json_envio = JSON.stringify(json_envio);
+                        $.post("/back_end/controller/aluno.php", json_envio, (resposta)=>{
+                            resposta = JSON.parse(resposta);
+
+                            if(resposta.result){
+                                $('#btn_entrar').css("display", "none");
+                                $('#teste_menu').append(`<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="#portfolio">Empresas Associadas</a></li>`);
+                            }
+                    })}
 
 
                     let url_query = (($(location).attr('pathname')).substring(1)).split("/");
@@ -428,6 +459,8 @@
                     }
 
                 </script>
+
+
 </body>
 
 </html>
