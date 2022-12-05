@@ -72,7 +72,7 @@
                                 <h1>Cadastro</h1>
 
                                 <label for="name"><b>Nome Completo</b></label>
-                                <input type="text" placeholder="Insira seu nome" name="name" class="FormEmailPopup" id="FormEmailPopup" required>
+                                <input type="text" placeholder="Insira seu nome" name="name" class="FormEmailPopup" id="FormNamelPopup" required>
 
                                 <label for="email"><b>Email</b></label>
                                 <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
@@ -80,10 +80,21 @@
                                 <label for="password"><b>Senha</b></label>
                                 <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
 
-                                <label for="password"><b>Confirme sua senha</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
+                                <label for="password"><b>Endereço</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" class="FormEndPopup" id="FormEndPopup" required>
+
+
+                                <label for="password"><b>Telefone</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" class="FormTelPopup" id="FormTelPopup" required>
+
+
+                                <label for="password"><b>Data de Nascimento</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" class="FormDataPopup" id="FormDataPopup" required>
+
+                                <label for="password"><b>Cidade</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" class="FormCityPopup" id="FormCityPopup" required>
                                 <button type="submit" class="btnLog">Cadastrar</button>
-                                <button type="button" class="cancel" onclick="closeForm()">Close</button>
+                                <button type="button" class="cancel" onclick="closeForm()">Fechar</button>
                             </form>
                         </div>
                         <script>
@@ -141,7 +152,7 @@
                                 document.getElementById("FormPopup").style.display = "none";
                             }
                         </script>
-                        
+
                     </div>
 
                 </div>
@@ -186,6 +197,21 @@
             </div>
         </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+
+        let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
+        console.log(url_query);
+        if(url_query[0] == 'admin'){
+          if(url_query[1] == 'cadastro'){
+            $("#document-root").load("../paginas/cadastroescolha.html");
+          }
+          else{
+            $("#document-root").load("../paginas/cadastroescolha.html");
+          }
+        }
+
+      </script>
 </body>
 
 </html>

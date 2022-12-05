@@ -45,6 +45,7 @@
                             onclick="openForm()">Entrar</a>
                     </li>
 
+
                             <div class="form-popup" id="FormPopup">
                                 <div class="form-container">
                                     <!-- action="../paglogado/inicio.html" -->
@@ -88,7 +89,7 @@
 
 
             <!-- Masthead Heading-->
-            <a class="masthead-heading text-uppercase mb-0 text-light" onclick="openForm()">Entrar</a>
+            <a class="masthead-heading text-uppercase mb-0 text-light mb-4" onclick="openForm()">Entrar</a>
             <div class="form-popup" id="FormPopup">
 
             <!-- Icon Divider-->
@@ -356,7 +357,7 @@
                                             </div>
                                             <!-- Portfolio Modal - Image-->
                                             <img class="img-fluid rounded mb-5"
-                                                src="assets/img/portfolio/logo_samae_exp.png" alt="..." />
+                                                src="assets/img/portfolio/logo_samae_exp .png" alt="..." />
                                             <!-- Portfolio Modal - Text-->
                                             <p class="mb-4">Texto de resumo sobre a empresa.</p>
                                             <button class="btn btn-primary" data-bs-dismiss="modal">
@@ -390,10 +391,8 @@
                                                 <div class="divider-custom-line"></div>
                                             </div>
                                             <!-- Portfolio Modal - Image-->
-                                            <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png"
-                                                alt="..." />
-
-
+                                            <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png"  alt="..." />
+                                            <p class="mb-4"> Texto exemplo </p>
                                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                                 <i class="fas fa-xmark fa-fw"></i>
                                                 Fechar
@@ -441,8 +440,7 @@
 
                             if(resposta.result){
                                 $('#btn_entrar').css("display", "none");
-                                $('#teste_menu').append(`<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#portfolio">Empresas Associadas</a></li>`);
+                                $('#teste_menu').append(`<li class="nav-item mx-0 mx-lg-1"><i class="fa-solid fa-user"></i> </li>`);
                             }
                     })}
 
@@ -464,5 +462,3 @@
 </body>
 
 </html>
-
-

@@ -9,7 +9,6 @@ $res->error = "";
 
 require_once "../model/Aluno.php";
 
-
 if($objRetorno->acao == 'cadastrar'){
     $aluno = new Aluno();
     $aluno->email = $objRetorno->email;
@@ -34,17 +33,9 @@ if($req->funcao == 'logar'){
         $res->result = true;
         $res->data = $aluno;
     }
-    else{        
-        if($adm->consultarPorMatricula($objRetorno['telefone'])){
-            $result['error'] = 'Telefone já cadastrado';
-        }
-        elseif($adm->consultarPorEmail($objRetorno['email'])){
-            $result['error'] = 'E-mail já cadastrado';
-        }
-        else{
-            $result['error'] = 'Erro de cadastro inesperado';
-        }
-    }
+    else{
+        $res->error = "Usuário ou senha inválido";
+
+}
 }
 
-echo json_encode($res);

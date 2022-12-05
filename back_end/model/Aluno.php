@@ -47,23 +47,25 @@ class Aluno{
         $cx = (new DataBase())->connection();
 
         $cmdSql = 'INSERT INTO aluno(email, senha, nome, telefone, endereco, dataNasc, cidade) VALUES (:email, :senha, :nome, :telefone, :endereco, :dataNasc, :cidade);';
-        $dados=[            
-            ':email'=>$this->email, 
-            ':senha'=>$this->senha, 
-            ':nome'=>$this->nome, 
-            ':telefone'=>$this->telefone, 
+        $dados=[
+            ':email'=>$this->email,
+            ':senha'=>$this->senha,
+            ':nome'=>$this->nome,
+            ':telefone'=>$this->telefone,
             ':endereco'=>$this->endereco,
-            ':dataNasc'=>$this->dataNasc, 
+            ':dataNasc'=>$this->dataNasc,
             ':cidade'=>$this->cidade
         ];
         $cx = $cx->prepare($cmdSql);
         return $cx->execute($dados);
     }
-    
-    if($cx->insert($cmdSql,$dados)){
+
+    if($cx->insert($cmdSql, $dados)){
         return true;
     }
     else{
         return false;
+    }
 
 }
+
