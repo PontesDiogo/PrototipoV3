@@ -68,34 +68,34 @@
 
                         </label>
                         <div class="form-popup" id="FormPopup">
-                            <form action="../paginas/painel.php" class="form-container">
+                            <div class="form-container">
                                 <h1>Cadastro</h1>
 
                                 <label for="name"><b>Nome Completo</b></label>
-                                <input type="text" placeholder="Insira seu nome" name="name" class="FormEmailPopup" id="FormNamelPopup" required>
+                                <input type="text" placeholder="Insira seu nome"            class="FormEmailPopup" id="input-nome" required>
 
                                 <label for="email"><b>Email</b></label>
-                                <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
+                                <input type="text" placeholder="Enter Email"                class="FormEmailPopup" id="input-email" required>
 
                                 <label for="password"><b>Senha</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
+                                <input type="password" placeholder="Enter Password"         class="FormSenhaPopup" id="input-senha" required>
 
-                                <label for="password"><b>Endereço</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormEndPopup" id="FormEndPopup" required>
-
-
-                                <label for="password"><b>Telefone</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormTelPopup" id="FormTelPopup" required>
+                                <label for="text"><b>Endereço</b></label>
+                                <input type="text" placeholder="Seu Endereço"               class="FormEndPopup" id="input-endereco" required>
 
 
-                                <label for="password"><b>Data de Nascimento</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormDataPopup" id="FormDataPopup" required>
+                                <label for="tex"><b>Telefone</b></label>
+                                <input type="tel" placeholder="Enter Telefone"             class="FormTelPopup" id="input-telefone" required>
 
-                                <label for="password"><b>Cidade</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormCityPopup" id="FormCityPopup" required>
-                                <button type="submit" class="btnLog">Cadastrar</button>
+
+                                <label for="date"><b>Data de Nascimento</b></label>
+                                <input type="date" placeholder="Enter data de nascimento"   class="FormDataPopup" id="input-data_nasc" required>
+
+                                <label for="text"><b>Cidade</b></label>
+                                <input type="text" placeholder="Enter Cidade"               class="FormCityPopup" id="input-cidade" required>
+                                <button type="button" class="btnLog" id="input_alunoCadastrar">Cadastrar</button>
                                 <button type="button" class="cancel" onclick="closeForm()">Fechar</button>
-                            </form>
+                            </div>
                         </div>
                         <script>
                             function openForm() {
@@ -197,19 +197,67 @@
             </div>
         </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/jquery-3.6.1.min.js"></script>
     <script>
 
 
-        let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
-        console.log(url_query);
-        if(url_query[0] == 'admin'){
-          if(url_query[1] == 'cadastro'){
-            $("#document-root").load("../paginas/cadastroescolha.html");
-          }
-          else{
-            $("#document-root").load("../paginas/cadastroescolha.html");
-          }
+
+        // let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
+        // console.log(url_query);
+        // if(url_query[0] == 'admin'){
+        //   if(url_query[1] == 'cadastro'){
+        //     $("#document-root").load("../paginas/cadastroescolha.html");
+        //   }
+        //   else{
+        //     $("#document-root").load("../paginas/cadastroescolha.html");
+        //   }
+        // }
+
+        let element_nome = $("#input-nome");
+        let element_email = $("#input-email");
+        let element_senha = $("#input-senha");
+        let element_endereco = $("#input-endereco");
+        let element_telefone = $("#input-telefone");
+        let element_data_nasc = $("#input-data_nasc");
+        let element_cidade = $("#input-cidade");
+        let element_alunoCadastrar = $("#input_alunoCadastrar");
+
+
+
+
+        element_alunoCadastrar.click(()=>{
+            alunoCadastrar(
+                element_nome.val(),
+                element_email.val(),
+                element_senha.val(),
+                element_endereco.val(),
+                element_telefone.val(),
+                element_data_nasc.val(),
+                element_cidade.val()
+            );
+        })
+
+        function alunoCadastrar(nome,email,senha,endereco,telefone,data_nasc,cidade) {
+
+        let req = {
+            "funcao": "cadastrar",
+            "nome":nome,
+            "email":email,
+            "senha":senha,
+            "endereco":endereco,
+            "telefone":telefone,
+            "dataNasc": data_nasc,
+            "cidade":cidade
         }
+
+        req = JSON.stringify(req);
+        url = $(location).attr('protocol')+"//"+ $(location).attr('host');
+        console.log(url);
+        $.post(`${url}/back_end/controller/aluno.php`, req, (resposta)=>{
+            resposta = JSON.parse(resposta);
+
+            console.log(resposta);
+        })}
 
       </script>
 </body>

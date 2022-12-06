@@ -9,16 +9,17 @@ $res->error = "";
 
 require_once "../model/Aluno.php";
 
-if($objRetorno->acao == 'cadastrar'){
+if($req->funcao == 'cadastrar'){
     $aluno = new Aluno();
-    $aluno->email = $objRetorno->email;
-    $aluno->senha = $objRetorno->senha;
-    $aluno->nome = $objRetorno->nome;
-    $aluno->telefone = $objRetorno->telefone;
-    $aluno->dataNasc = $objRetorno->dataNasc;
-    $aluno->cidade = $objRetorno->cidade;
+    $aluno->nome = $req->nome;
+    $aluno->email = $req->email;
+    $aluno->senha = $req->senha;
+    $aluno->endereco = $req->endereco;
+    $aluno->telefone = $req->telefone;
+    $aluno->dataNasc = $req->dataNasc;
+    $aluno->cidade = $req->cidade;
 
-    if($cliente->cadastrar()){
+    if($aluno->cadastrar()){
         $res->result = true;
         $res->data = $aluno;
     }
@@ -26,8 +27,7 @@ if($objRetorno->acao == 'cadastrar'){
         $res->error = "Cadastro não realizado";
     }
 }
-
-if($req->funcao == 'logar'){
+elseif(@$req->funcao == 'logar'){
     $aluno = new Aluno();
     if($aluno->logar($req->email, $req->senha)){
         $res->result = true;
@@ -36,6 +36,7 @@ if($req->funcao == 'logar'){
     else{
         $res->error = "Usuário ou senha inválido";
 
-}
+    }
 }
 
+echo json_encode($res);

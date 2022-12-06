@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `dataNasc` date DEFAULT NULL,
   `cidade` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 --
 -- Extraindo dados da tabela `aluno`
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `candidata` (
   `status` text,
   KEY `FK_Candidata_1` (`fk_Aluno_email`),
   KEY `FK_Candidata_2` (`fk_Vagas_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   PRIMARY KEY (`id`),
   KEY `FK_Chat_1` (`fk_Aluno_email`),
   KEY `FK_Chat_2` (`fk_Vagas_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `curriculo` (
   `infoAdicionais` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Curriculo_2` (`fk_Aluno_email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `telefone` int DEFAULT NULL,
   `endereco` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `formacao` (
   `formAno` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Formacao_1` (`fk_Curriculo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `mensagem` (
   `texto` varchar(300) DEFAULT NULL,
   `remetente` varchar(50) DEFAULT NULL,
   KEY `FK_Mensagem_1` (`fk_Chat_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `vagas` (
   `vagasNum` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Vagas_2` (`fk_Empresa_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB ;
 
 --
 -- Restrições para despejos de tabelas

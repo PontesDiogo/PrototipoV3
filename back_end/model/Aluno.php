@@ -59,13 +59,4 @@ class Aluno{
         $cx = $cx->prepare($cmdSql);
         return $cx->execute($dados);
     }
-
-    if($cx->insert($cmdSql, $dados)){
-        return true;
-    }
-    else{
-        return false;
-    }
-
 }
-
