@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `curriculo` (
 
 DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE IF NOT EXISTS `empresa` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `cnpj` int DEFAULT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,

@@ -423,7 +423,12 @@
                     btnLogin.addEventListener("click", () => {
                         email = document.querySelector("#FormEmailPopup").value
                         senha = document.querySelector("#FormSenhaPopup").value
+                        if ( email == "" || senha == "")(
+                            alert("Dados não informados")
+                        )
+                        else{
                         login(email, senha)
+                        }
                     })
 
                     const login = (email, senha) => {
@@ -440,21 +445,12 @@
 
                             if(resposta.result){
                                 $('#btn_entrar').css("display", "none");
-                                $('#teste_menu').append(`<li class="nav-item mx-0 mx-lg-1"><i class="fa-solid fa-user"></i> </li>`);
+                                $('#teste_menu').append(`<li class="nav-item mx-0 mx-lg-1"> <i class="fa-solid fa-user"></i> </li>`);
                             }
                     })}
 
 
-                    let url_query = (($(location).attr('pathname')).substring(1)).split("/");
-                    console.log(url_query);
-                    if (url_query[0] == 'user') {
-                        if (url_query[1] == 'cadastro') {
-                            $("#document-root").load("/paginas/login.html");
-                        }
-                        else {
-                            $("#document-root").load("/paginas/login.html");
-                        }
-                    }
+
 
                 </script>
 

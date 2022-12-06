@@ -1,38 +1,38 @@
 <?php
 //header('Content-type: application/json');
 $req = json_decode(file_get_contents('php://input'));
+var_dump($req);
 
 $res = new stdClass();
 $res->result = false;
 $res->data = "";
 $res->error = "";
 
-require_once "../model/Aluno.php";
-
+require_once "../model/Empresa.php";
 if($req->funcao == 'cadastrar'){
-    $aluno = new Aluno();
-    
-    $aluno->nome = $req->nome;
-    $aluno->email = $req->email;
-    $aluno->senha = $req->senha;
-    $aluno->endereco = $req->endereco;
-    $aluno->telefone = $req->telefone;
-    $aluno->dataNasc = $req->dataNasc;
-    $aluno->cidade = $req->cidade;
+    $empresa = new Empresa();
+    $empresa->cnpj = $req->cnpj;
+    $empresa->nome = $req->nome;
+    $empresa->email = $req->email;
+    $empresa->senha = $req->senha;
+    $empresa->telefone = $req->telefone;
+    $empresa->endereco = $req->endereco;
 
-    if($aluno->cadastrar()){
+
+
+    if($empresa->cadastrar()){
         $res->result = true;
-        $res->data = $aluno;
+        $res->data = $empresa;
     }
     else{
         $res->error = "Cadastro não realizado";
     }
 }
 elseif(@$req->funcao == 'logar'){
-    $aluno = new Aluno();
-    if($aluno->logar($req->email, $req->senha)){
+    $empresa = new Empresa();
+    if($empresa->logar($req->email, $req->senha)){
         $res->result = true;
-        $res->data = $aluno;
+        $res->data = $empresa;
     }
     else{
         $res->error = "Usuário ou senha inválido";

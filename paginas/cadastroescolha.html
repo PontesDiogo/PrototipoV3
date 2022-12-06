@@ -59,7 +59,7 @@
                                 <b class="text-dark">Conta estudantil</b>
                             </h3>
                             <hr/>
-                            <form onclick="openForm()">
+                            <form onclick="openForm('FormPopupAluno')">
                                 <h4>Conta destinada a alunos</h4>
                                 <p>Por favor clique aqui para registrar suas informações</p>
                                 <br>
@@ -67,45 +67,37 @@
 
 
                         </label>
-                        <div class="form-popup" id="FormPopup">
-                            <div class="form-container">
+                        <div class="form-popup" id="FormPopupAluno">
+                            <div class="form-container w-100">
                                 <h1>Cadastro</h1>
 
                                 <label for="name"><b>Nome Completo</b></label>
                                 <input type="text" placeholder="Insira seu nome"            class="FormEmailPopup" id="input-nome" required>
+                                <br>
 
                                 <label for="email"><b>Email</b></label>
                                 <input type="text" placeholder="Enter Email"                class="FormEmailPopup" id="input-email" required>
-
-                                <label for="password"><b>Senha</b></label>
-                                <input type="password" placeholder="Enter Password"         class="FormSenhaPopup" id="input-senha" required>
-
+                                <br>
+                                <label for=""><b>Senha</b></label>
+                                <input type="" placeholder="Enter "         class="" id="input-senha" required>
+                                <br>
                                 <label for="text"><b>Endereço</b></label>
                                 <input type="text" placeholder="Seu Endereço"               class="FormEndPopup" id="input-endereco" required>
-
+                                <br>
 
                                 <label for="tex"><b>Telefone</b></label>
                                 <input type="tel" placeholder="Enter Telefone"             class="FormTelPopup" id="input-telefone" required>
-
+                                <br>
 
                                 <label for="date"><b>Data de Nascimento</b></label>
                                 <input type="date" placeholder="Enter data de nascimento"   class="FormDataPopup" id="input-data_nasc" required>
-
+                                <br>
                                 <label for="text"><b>Cidade</b></label>
                                 <input type="text" placeholder="Enter Cidade"               class="FormCityPopup" id="input-cidade" required>
                                 <button type="button" class="btnLog" id="input_alunoCadastrar">Cadastrar</button>
-                                <button type="button" class="cancel" onclick="closeForm()">Fechar</button>
+                                <button type="button" class="cancel" onclick="closeForm('FormPopupAluno')">Fechar</button>
                             </div>
                         </div>
-                        <script>
-                            function openForm() {
-                                document.getElementById("FormPopup").style.display = "block";
-                            }
-
-                            function closeForm() {
-                                document.getElementById("FormPopup").style.display = "none";
-                            }
-                        </script>
 
                     </div>
 
@@ -116,7 +108,7 @@
                                 <b class="text-dark">Conta empresarial</b>
                             </h3>
                             <hr>
-                            <form onclick="openForm()">
+                            <form onclick="openForm('FormPopupEmpresa')">
                                 <h4>Conta destinada a empresas</h4>
                                 <p>Por favor clique aqui para registrar suas informações</p>
                                 <br>
@@ -124,35 +116,31 @@
 
 
                         </label>
-                        <div class="form-popup" id="FormPopup">
-                            <form action="../paginas/painel.php" class="form-container">
+                        <div class="form-popup" id="FormPopupEmpresa">
+                            <div class="form-container w-100">
                                 <h1>Cadastro</h1>
 
-                                <label for="name"><b>Nome Completo</b></label>
-                                <input type="text" placeholder="Insira seu nome" name="name" class="FormEmailPopup" id="FormEmailPopup" required>
+                                <label for="cnpj"><b>CPNJ da empresa</b></label>
+                                <input type="number" placeholder="Insira o CNPJ da sua empresa" name="cnpj" class="FormCnpjPopup" id="input-cnpj" required>
                                 <br>
+                                <label for="nome"><b>Nome</b></label>
+                                <input type="text" placeholder="Insira o nome da empresa" name="nome" class="FormNomelPopup" id="input-nome" required>
+
                                 <label for="email"><b>Email</b></label>
-                                <input type="text" placeholder="Enter Email" name="email" class="FormEmailPopup" id="FormEmailPopup" required>
+                                <input type="email" placeholder="Insira o email de sua empresa " name="email" class="FormEmailPopup" id="input-email" required>
 
-                                <label for="password"><b>Senha</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
+                                <label for="Senha"><b>Insira a senha</b></label>
+                                <input type="password" placeholder="Insira uma senha forte " name="email" class="FormSenhaPopup" id="input-senha" required>
 
-                                <label for="password"><b>Confirme sua senha</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" class="FormSenhaPopup" id="FormSenhaPopup" required>
-                                <button type="submit" class="btnLog" id="btnCad">Cadastrar</button>
-                                <button type="button" class="cancel" onclick="closeForm()">Fechar</button>
-                            </form>
+                                <label for="Telefone"><b>Telefone para contato</b></label>
+                                <input type="number" placeholder="Insira um telefone para contato " name="telefone" class="FormTelPopup" id="input-telefone" required>
+
+                                <label for="endereco"><b>Endereço da sua empresa</b></label>
+                                <input type="text" placeholder="Insira o endereço da empresa " name="endereco" class="FormEndPopup" id="input-endereco" required>
+                                <button type="submit" class="btnLog" id="input_empresaCadastrar">Cadastrar</button>
+                                <button type="button" class="cancel" onclick="closeForm('FormPopupEmpresa')">Fechar</button>
+                            </div>
                         </div>
-                        <script>
-                            function openForm() {
-                                document.getElementById("FormPopup").style.display = "block";
-                            }
-
-                            function closeForm() {
-                                document.getElementById("FormPopup").style.display = "none";
-                            }
-                        </script>
-
                     </div>
 
                 </div>
@@ -162,6 +150,7 @@
         </main>
 
     </div>
+        <div id="fff"></div>
       <footer class="footer text-center ">
             <div class="container">
                 <div class="row">
@@ -198,20 +187,15 @@
         </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/jquery-3.6.1.min.js"></script>
+
     <script>
+        function openForm(name_form) {
+            document.getElementById(name_form).style.display = "block";
+        }
 
-
-
-        // let url_query  = (($(location).attr('pathname')).substring(1)).split("/");
-        // console.log(url_query);
-        // if(url_query[0] == 'admin'){
-        //   if(url_query[1] == 'cadastro'){
-        //     $("#document-root").load("../paginas/cadastroescolha.html");
-        //   }
-        //   else{
-        //     $("#document-root").load("../paginas/cadastroescolha.html");
-        //   }
-        // }
+        function closeForm(name_form) {
+            document.getElementById(name_form).style.display = "none";
+        }
 
         let element_nome = $("#input-nome");
         let element_email = $("#input-email");
@@ -219,23 +203,74 @@
         let element_endereco = $("#input-endereco");
         let element_telefone = $("#input-telefone");
         let element_data_nasc = $("#input-data_nasc");
-        let element_cidade = $("#input-cidade");
+        let element_cidade = $("#input-cidade");  //ALTERAR IDs - separando um para aluno e um para empresa
+        let element_cnpj = $("#input-cnpj");
+        let element_id = $("#input-id");
+
         let element_alunoCadastrar = $("#input_alunoCadastrar");
+        let element_empresaCadastrar = $("#input_empresaCadastrar")
 
 
 
 
         element_alunoCadastrar.click(()=>{
-            alunoCadastrar(
-                element_nome.val(),
-                element_email.val(),
-                element_senha.val(),
-                element_endereco.val(),
-                element_telefone.val(),
-                element_data_nasc.val(),
-                element_cidade.val()
-            );
-        })
+            if (element_nome == "" || element_email == "" || element_senha == "")(
+                            alert("Dados não informados")
+                        )
+                        else{
+                            alunoCadastrar(
+                            element_nome.val(),
+                            element_email.val(),
+                            element_senha.val(),
+                            element_endereco.val(),
+                            element_telefone.val(),
+                            element_data_nasc.val(),
+                            element_cidade.val()
+                        );
+                        }
+                    })
+
+
+         element_empresaCadastrar.click(()=>{
+            if (element_nome == "" || element_email == "" || element_senha == ""){
+                alert("Dados não informados")
+            }
+            else{
+                empresaCadastrar(
+                    element_id.val(),
+                    element_cnpj.val(),
+                    element_nome.val(),
+                    element_email.val(),
+                    element_senha.val(),
+                    element_endereco.val(),
+                    element_telefone.val()
+                );
+            }
+            })
+
+         function empresaCadastrar(id, cnpj, nome,email,senha,endereco,telefone){
+         let req = {
+            "funcao": "cadastrar",
+            "id": id,
+            "cnpj": cnpj,
+            "nome":nome,
+            "email":email,
+            "senha":senha,
+            "endereco":endereco,
+            "telefone":telefone
+         }
+
+         req = JSON.stringify(req);
+         url = $(location).attr('protocol')+"//"+ $(location).attr('host');
+         console.log(req);
+
+        $.post(`${url}/back_end/controller/empresa.php`, req, (resposta)=>{
+            console.log(resposta);
+            $('#fff').html(resposta)
+            // resposta = JSON.parse(resposta);
+
+            // console.log(resposta);
+        })}
 
         function alunoCadastrar(nome,email,senha,endereco,telefone,data_nasc,cidade) {
 
@@ -263,3 +298,15 @@
 </body>
 
 </html>
+
+<!--
+.footer {
+    padding-top: 5rem;
+    right: 0;
+    padding-bottom: 5rem;
+    background-color: #2c3e50;
+    color: #fff;
+    position: fixed;
+    width: -webkit-fill-available;
+    bottom: 0;
+} -->
